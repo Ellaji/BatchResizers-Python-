@@ -2,7 +2,7 @@
 Scripts for batch processing images 
 
 To run this script, PIL or Pillow should be installed.
-Also jpeg and png decoders (libraries) should be installed with PIl or Pillow.
+Also jpeg and png decoders (libraries) should be installed with PIL or Pillow.
 There is an OS X (Mac) .DS_Store workaround in the script, which can be deleted for other operating systems.
 
 In command line, cd to the script
