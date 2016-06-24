@@ -30,7 +30,7 @@ for opt, arg in opts:
 if width == -1 or height == -1 or directory == '':
    print('Invalid command line arguments. -d [directory] ' \
      '-w [width in px] -h [height in px] are required')
-     # in my case: python BatchResizer.py -d /Users/Mirella/Desktop/Photos -w 405 -h 405
+     # example: python BatchResizer.py -d /Users/Name/Desktop/Photos -w 405 -h 405
    # If an argument is missing exit the application.
    exit()
 
