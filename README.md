@@ -1,4 +1,4 @@
-# BatchResizers-Python-
+# BatchResizer-Python
 Scripts for batch processing images 
 
 To run this script, PIL or Pillow should be installed.
