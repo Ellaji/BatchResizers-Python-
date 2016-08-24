@@ -40,38 +40,34 @@ for image in os.listdir(directory):
      pass
    else:
      print('Resizing image ' + image)
-     # Next line is to solve a hidden file bug
-     if image == ".DS_Store":
-       pass
-     else:
-       # Open the file 
-       img = Image.open(os.path.join(directory, image))
-       # Check whether file is landscape or portrait
-       original_width, original_height = img.size
-       if original_width > original_height: 
-         # For landscape images
-         baseWidth = width
-         # Calculate the height using the same aspect ratio
-         widthPercent = (baseWidth / float(img.size[0]))
-         ratioHeight = int((float(img.size[1]) * float(widthPercent)))
-         # Resize it.
-         img = img.resize((baseWidth, ratioHeight), Image.BILINEAR)
-         # Save it back to disk.
-         img.save(os.path.join(directory, 'thumb-' + image))
-       elif original_width < original_height:
-         # For portrait images      
-         baseHeight = height
-         # Calculate the height using the same aspect ratio
-         heightPercent = (baseHeight / float(img.size[1]))
-         ratioWidth = int((float(img.size[0]) * float(heightPercent)))
-         # Resize it.
-         img = img.resize((ratioWidth, baseHeight), Image.BILINEAR) 
-         # Save it back to disk.
-         img.save(os.path.join(directory, 'thumb-' + image))
-       else: # image must be square already then
-         # Resize it.
-         img = img.resize((width, height), Image.BILINEAR)
-         # Save it back to disk.
-         img.save(os.path.join(directory, 'thumb-' + image))
- 
+     # Open the file 
+     img = Image.open(os.path.join(directory, image))
+     # Check whether file is landscape or portrait
+     original_width, original_height = img.size
+     if original_width > original_height: 
+       # For landscape images
+       baseWidth = width
+       # Calculate the height using the same aspect ratio
+       widthPercent = (baseWidth / float(img.size[0]))
+       ratioHeight = int((float(img.size[1]) * float(widthPercent)))
+       # Resize it.
+       img = img.resize((baseWidth, ratioHeight), Image.BILINEAR)
+       # Save it back to disk.
+       img.save(os.path.join(directory, 'thumb-' + image))
+     elif original_width < original_height:
+       # For portrait images      
+       baseHeight = height
+       # Calculate the height using the same aspect ratio
+       heightPercent = (baseHeight / float(img.size[1]))
+       ratioWidth = int((float(img.size[0]) * float(heightPercent)))
+       # Resize it.
+       img = img.resize((ratioWidth, baseHeight), Image.BILINEAR) 
+       # Save it back to disk.
+       img.save(os.path.join(directory, 'thumb-' + image))
+     else: # image must be square already then
+       # Resize it.
+       img = img.resize((width, height), Image.BILINEAR)
+       # Save it back to disk.
+       img.save(os.path.join(directory, 'thumb-' + image))
+
 print('Batch processing complete.')
